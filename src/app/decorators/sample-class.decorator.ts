@@ -1,20 +1,4 @@
-import { TypeDecorator } from '@angular/core';
-// import { makeDecorator } from '@angular/core/src/util/decorators';
-
-/**
- *
- */
-export interface SampleClassDecorator {
-  /**
-   *
-   */
-  (obj: SampleClass): TypeDecorator;
-
-  /**
-   *
-   */
-  new (obj: SampleClass): SampleClass;
-}
+import { METADATE_KEY_SAMPLE_CLASS_DECORATOR } from './constants';
 
 /**
  *
@@ -24,18 +8,10 @@ export interface SampleClass {
   memo?: string;
 }
 
-// /** */
-// export const SampleClass: SampleClassDecorator = makeDecorator(
-//   'SampleClass',
-//   (cls: SampleClass = {}) => cls,
-//   undefined,
-//   undefined,
-//   undefined,
-// );
-
-export const someClassDecorator = (option?: SampleClass) => {
-  return <TFunc extends Function>(target: TFunc) => {
-    Reflect.set(target, 'someClass', option);
+/** @Annotation */
+export const SampleClass = (option?: SampleClass) => {
+  return <TFunction extends Function>(target: TFunction) => {
+    Reflect.defineMetadata(METADATE_KEY_SAMPLE_CLASS_DECORATOR, option, target);
     return target;
   };
 };
