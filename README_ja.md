@@ -1,41 +1,42 @@
-# Overview
+# 概要
 
-* It is a sample using TypeScript Decorator.
-* Use reflect-metadata to store information defined by Decorator.
+* TypeScript の Decorator を使用したサンプルです。
+* reflect-metadata を使用して Decorator で定義した情報を格納します。
 
-# System requirements
+# 実行環境
 
 * Node.js 10.x
 * Yarn 1.12.x
 
-# Used library
+
+# 使用ライブラリ
 
 * TypeScript - 3.2.x
 * Angular - 7.2.x
 * reflect-metadata - 0.1.13
 
-# Operation check
+# 動作確認
 
-## 1. Download Sample
+## 1. サンプルのダウンロード
 
 ```
 git clone git@github.com:yasu-s/ts-decorator-sample.git
 ```
 
-## 2. Installing packages  
+## 2. パッケージインストール  
 
 ```
 cd ts-decorator-sample
 yarn
 ```
 
-## 3. Launch sample application  
+## 3. サンプルの起動  
 
 ```
 yarn start
 ```
 
-# Sample source
+# サンプルソース
 
 ## src/app/decorators/constants.ts
 
