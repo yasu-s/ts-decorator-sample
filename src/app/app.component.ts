@@ -12,6 +12,7 @@ import { getClassSampleMetadata, getSamplePropMetadata } from './decorators/util
 @SampleClass({ memo: 'hoge' })
 export class AppComponent {
   /** */
+  @SampleProp('hage')
   memo1 = '';
   /** */
   @SampleProp('hige')
@@ -25,6 +26,8 @@ export class AppComponent {
     if (cls) {
       this.memo1 = cls.memo;
     }
+
+    this.memo1 += ' - ' + getSamplePropMetadata(this, 'memo1');
   }
 
   /**

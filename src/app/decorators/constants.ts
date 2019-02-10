@@ -1,5 +1,5 @@
-/** メタデータキー：SampleClassDecorator */
+/** MetaData Key: SampleClassDecorator */
 export const METADATE_KEY_SAMPLE_CLASS_DECORATOR = 'SampleClassDecorator';
 
-/** メタデータキー：SamplePropDecorator */
+/** MetaData Key: SamplePropDecorator */
 export const METADATE_KEY_SAMPLE_PROP_DECORATOR = 'SamplePropDecorator';
