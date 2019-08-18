@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ɵReflectionCapabilities } from '@angular/core';
 
 import { SampleClass } from './decorators/sample-class.decorator';
 import { SampleProp } from './decorators/sample-prop.decorator';
-import { getClassSampleMetadata, getSamplePropMetadata } from './decorators/utils';
+import { getSamplePropMetadata } from './decorators/utils';
 
 @Component({
   selector: 'app-root',
@@ -22,9 +22,10 @@ export class AppComponent {
    *
    */
   onClick1(): void {
-    const cls = getClassSampleMetadata(AppComponent);
-    if (cls) {
-      this.memo1 = cls.memo;
+    const reflector = new ɵReflectionCapabilities();
+    const cls = reflector.annotations(AppComponent);
+    if (cls.length > 0) {
+      this.memo1 = cls[0].memo;
     }
 
     this.memo1 += ' - ' + getSamplePropMetadata(this, 'memo1');
